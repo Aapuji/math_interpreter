@@ -1,7 +1,6 @@
 #ifndef LIB_H
 #define LIB_H
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
 #include <string.h>
@@ -17,6 +16,10 @@ typedef enum {
     TT_LIT /* Literal Token */
 } token_t;
 
+/**
+ * @brief Token - has a type (token_t) and a raw string value of the token (char *)
+ * 
+ */
 typedef struct token {
     token_t type;
     char *raw;

@@ -1,4 +1,5 @@
 #include "lib.h"
+#include "lexer.h"
 
 int main(void) {
     linked *ll = linked_factory();
@@ -10,13 +11,13 @@ int main(void) {
     printf("%i\n", tok->type);
     printf("%s\n", tok->raw);
 
-    node *n = node_factory(tok);
-    if (!n) perror("Malloc Error - node");
-
-    printf("NODE: %s\n", n->value.raw);
-
     enqueue(ll, tok);
 
     printf("%i %s\n", ll->head->value.type, ll->tail->value.raw);
+
+    char *arr[] = {"Hello", "Bye", "Bye Bye", "Bonjour"};
+    int index = index_of(arr, 4, "Welcome");
+    printf("Index: %i", index);
+
     return 0;
 }
